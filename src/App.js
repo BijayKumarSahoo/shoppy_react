@@ -12,20 +12,22 @@ import CartContextProvider from './store/cart-context-provider';
 const App = () => {
   const [isCartShown, setIsCartShown] = useState(false);
   const history = useHistory();
-  const location = useLocation();
+  // const location = useLocation();
 
-  const background = location.state && location.state.background;
+  // const background = location.state && location.state.background;
 
   const toggleCartHandler = () => {
-    // history.replace('/');
+    history.replace('/');
     setIsCartShown(prevState => !prevState);
   }
 
   return (
     <CartContextProvider>
       <MainHeader onToggleCart={toggleCartHandler} />
-      <Switch location={background || location}>
-        <Route exact path='/' children={<Products />} />
+      <Switch>
+        <Route exact path='/'>
+          <Products />
+        </Route>
         <Route path='/signin'>
           <Signin />
         </Route>
@@ -33,7 +35,7 @@ const App = () => {
           <Signup />
         </Route>
       </Switch>
-      {isCartShown && <Route path="/cart" children={<Cart onToggleCart={toggleCartHandler} />} />}
+      {isCartShown && <Cart onToggleCart={toggleCartHandler} />}
       {/* <Route path='/cart'>
         {isCartShown && <Cart onToggleCart={toggleCartHandler} />}
       </Route> */}
