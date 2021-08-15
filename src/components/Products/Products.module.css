@@ -1,0 +1,19 @@
+.flex-container {
+    display: flex;
+    margin: 3rem;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+.flex-item {
+    padding: 0.1rem;
+    flex-basis: 25%;
+}
+
+@media screen and (max-width: 800px) {
+    .flex-container {
+        flex-direction: column;
+        font-size: smaller;
+        margin: 1rem;
+    }
+}

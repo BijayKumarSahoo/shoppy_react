@@ -1,0 +1,62 @@
+form {
+    width: 45%;
+    position: relative;
+    top: 4rem;
+    margin: auto;
+    border: 2px solid white;
+    border-radius: 0.8rem;
+    background-color: aliceblue;
+}
+
+form .content {
+    text-align: center;
+    padding: 1rem;
+}
+
+form div input {
+    display: inline-block;
+    width: 100%;
+    margin: 1rem 0rem 1rem;
+    border: 1px solid rgb(167, 178, 218);
+    border-radius: 0.3rem;
+    height: 3rem;
+}
+
+form div input {
+    padding-left: 10px;
+    font-size: medium;
+}
+
+form button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 0.6rem 1rem;
+    font-size: 0.9rem;
+    text-align: center;
+    display: block;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    outline: none;
+}
+
+form button:hover {
+    background-color: #7cbe7e;
+}
+
+form .link {
+    margin-top: 1rem;
+    text-align: center;
+}
+
+@media screen and (max-width: 1000px) {
+    form {
+        width: 60%;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    form {
+        width: 90%;
+    }
+}
