@@ -1,5 +1,5 @@
-import { Fragment, useState } from 'react';
-import { Route, Switch, useHistory, useLocation } from 'react-router-dom';
+import { useState } from 'react';
+import { Route, Switch, useHistory } from 'react-router-dom';
 import Signin from './components/Auth/Signin';
 import Signup from './components/Auth/Signup';
 import Cart from './components/Cart/Cart';
@@ -12,9 +12,6 @@ import CartContextProvider from './store/cart-context-provider';
 const App = () => {
   const [isCartShown, setIsCartShown] = useState(false);
   const history = useHistory();
-  // const location = useLocation();
-
-  // const background = location.state && location.state.background;
 
   const toggleCartHandler = () => {
     history.replace('/');
@@ -35,10 +32,9 @@ const App = () => {
           <Signup />
         </Route>
       </Switch>
-      {isCartShown && <Cart onToggleCart={toggleCartHandler} />}
-      {/* <Route path='/cart'>
+      <Route exact path="/cart" >
         {isCartShown && <Cart onToggleCart={toggleCartHandler} />}
-      </Route> */}
+      </Route>
       <Footer />
     </CartContextProvider>
   );

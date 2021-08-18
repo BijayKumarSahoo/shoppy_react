@@ -44,7 +44,7 @@ const Signin = (props) => {
                     name='password'
                     onChange={inputChangeHandler}
                     value={password}></input>
-                <button type='submit'>SignIn</button>
+                <button type='submit'><i className="fas fa-sign-in-alt"></i>SignIn</button>
                 <div className={classes.link}>
                     <small>Don't have an account. Please signup</small>
                     <br></br>
